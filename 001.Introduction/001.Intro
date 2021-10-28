@@ -1,0 +1,235 @@
+What is NodeJS?
+
+Javascript on your backend servers
+
+Javascript is not executed by Node, instead its executed by Virtual Machine like VM(V8/Chakra)
+So NodeJS is "A wrapper around a VM like V8 with built-in modules providing rich features through easy-to-use asynchronous APIs"
+
+
+Why Node?
+
+Pros
+    Wrapper around V8 (execute Javascript)
+
+    Built-in modules (fs, http, crypto, zip, ...)
+
+    Asynchronous APIs(no threads)
+
+    C++ addons
+
+    Debugger and other utilities
+
+    Module dependency manager
+
+cons
+    Differnt way of thinking
+    Picking good options
+    Small packages
+
+
+SAMPLE BASIC NODE COMMANDS
+---------------------------
+5$ node
+Welcome to Node.js v16.3.0.
+Type ".help" for more information.
+> Math.random()
+0.20224568651501018
+> let answer = 42;
+undefined
+> answer
+42
+> 3=='3'
+true
+> 3==='3'
+false
+> 
+
+DEFINING FUNCTIONS
+-------------------
+> function today() {
+... return new Date();
+... }
+undefined
+> today()
+2021-08-29T05:52:39.126Z
+
+MULTI LINE EDITING IN NODE
+--------------------------
+> .editor
+// Entering editor mode (Ctrl+D to finish, Ctrl+C to cancel)
+function add(x,y) {
+  return x+y;
+}
+
+function random() {
+  return Math.random()
+}
+
+undefined
+> random()
+0.9380567838020086
+
+.help COMMAND
+--------------
+> .help
+.break    Sometimes you get stuck, this gets you out
+.clear    Alias for .break
+.editor   Enter editor mode
+.exit     Exit the REPL
+.help     Print this help message
+.load     Load JS from a file into the REPL session
+.save     Save all evaluated commands in this REPL session to a file
+
+Press Ctrl+C to abort current expression, Ctrl+D to exit the REPL
+> 
+
+EXAMPLE OF A HELP COMMAND
+------------------------
+(from the above list...)
+> function() {
+function() {
+^^^^^^^^
+
+Uncaught SyntaxError: Function statements require a function name
+> 
+> function x() {
+... function y() {
+..... function xz() {
+....... break;
+....... .break
+> 
+
+TAB and UNDERSCORE
+------------------
+
+Type c and do double "TAB" to see the following
+> c
+case            catch
+const           continue
+
+child_process   clearImmediate
+clearInterval   clearTimeout
+cluster         console
+constants       crypto
+
+constructor
+
+Like wise type "Array." and double tab to see the following
+
+ Array.
+Array.__defineGetter__
+Array.__defineSetter__
+Array.__lookupGetter__
+Array.__lookupSetter__
+Array.__proto__
+Array.hasOwnProperty
+Array.isPrototypeOf
+Array.propertyIsEnumerable
+Array.toLocaleString
+Array.valueOf
+
+Array.apply
+Array.arguments
+Array.bind
+Array.call
+Array.caller
+Array.constructor
+Array.toString
+
+Array.from
+Array.isArray
+Array.length
+Array.name
+Array.of
+Array.prototype
+
+Like wise type "." and double tab to see the following
+> .
+break   clear   editor  exit
+help    load    save
+
+DOUBLE TAPPING on an EMPTY line provides the list of all available global commands
+
+> 
+AbortController       AbortSignal           AggregateError        Array                 ArrayBuffer
+Atomics               BigInt                BigInt64Array         BigUint64Array        Boolean
+Buffer                DataView              Date                  Error                 EvalError
+Event                 EventTarget           FinalizationRegistry  Float32Array          Float64Array
+Function              Infinity              Int16Array            Int32Array            Int8Array
+Intl                  JSON                  Map                   Math                  MessageChannel
+MessageEvent          MessagePort           NaN                   Number                Object
+Promise               Proxy                 RangeError            ReferenceError        Reflect
+RegExp                Set                   SharedArrayBuffer     String                Symbol
+SyntaxError           TextDecoder           TextEncoder           TypeError             URIError
+URL                   URLSearchParams       Uint16Array           Uint32Array           Uint8Array
+Uint8ClampedArray     WeakMap               WeakRef               WeakSet               WebAssembly
+_                     _error                add                   assert                async_hooks
+atob                  btoa                  buffer                child_process         clearImmediate
+clearInterval         clearTimeout          cluster               console               constants
+crypto                decodeURI             decodeURIComponent    dgram                 diagnostics_channel
+dns                   domain                encodeURI             encodeURIComponent    escape
+eval                  events                fs                    global                globalThis
+http                  http2                 https                 inspector             isFinite
+isNaN                 module                net                   os                    parseFloat
+parseInt              path                  perf_hooks            performance           process
+punycode              querystring           queueMicrotask        random                readline
+repl                  require               setImmediate          setInterval           setTimeout
+stream                string_decoder        sys                   timers                tls
+today                 trace_events          tty                   undefined             unescape
+url                   util                  v8                    vm                    wasi
+worker_threads        zlib
+
+__defineGetter__      __defineSetter__      __lookupGetter__      __lookupSetter__      __proto__
+hasOwnProperty        isPrototypeOf         propertyIsEnumerable  toLocaleString        toString
+valueOf
+
+constructor
+
+answer
+
+> 
+AbortController       AbortSignal           AggregateError        Array                 ArrayBuffer
+Atomics               BigInt                BigInt64Array         BigUint64Array        Boolean
+Buffer                DataView              Date                  Error                 EvalError
+Event                 EventTarget           FinalizationRegistry  Float32Array          Float64Array
+Function              Infinity              Int16Array            Int32Array            Int8Array
+Intl                  JSON                  Map                   Math                  MessageChannel
+MessageEvent          MessagePort           NaN                   Number                Object
+Promise               Proxy                 RangeError            ReferenceError        Reflect
+RegExp                Set                   SharedArrayBuffer     String                Symbol
+SyntaxError           TextDecoder           TextEncoder           TypeError             URIError
+URL                   URLSearchParams       Uint16Array           Uint32Array           Uint8Array
+Uint8ClampedArray     WeakMap               WeakRef               WeakSet               WebAssembly
+_                     _error                add                   assert                async_hooks
+atob                  btoa                  buffer                child_process         clearImmediate
+clearInterval         clearTimeout          cluster               console               constants
+crypto                decodeURI             decodeURIComponent    dgram                 diagnostics_channel
+dns                   domain                encodeURI             encodeURIComponent    escape
+eval                  events                fs                    global                globalThis
+http                  http2                 https                 inspector             isFinite
+isNaN                 module                net                   os                    parseFloat
+parseInt              path                  perf_hooks            performance           process
+punycode              querystring           queueMicrotask        random                readline
+repl                  require               setImmediate          setInterval           setTimeout
+stream                string_decoder        sys                   timers                tls
+today                 trace_events          tty                   undefined             unescape
+url                   util                  v8                    vm                    wasi
+worker_threads        zlib
+
+__defineGetter__      __defineSetter__      __lookupGetter__      __lookupSetter__      __proto__
+hasOwnProperty        isPrototypeOf         propertyIsEnumerable  toLocaleString        toString
+valueOf
+
+constructor
+
+answer
+
+
+_ Stores the last value of the executed expression
+
+> Math.random()
+0.05090854266396527
+> _
+0.05090854266396527
+> 
+

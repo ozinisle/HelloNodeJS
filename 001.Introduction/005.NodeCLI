@@ -1,0 +1,15 @@
+$ node -v
+v16.3.0
+$ node -p "os.cpus().length"
+16
+$ node -p "process.versions.v8"
+9.0.257.25-node.16
+
+
+1]+  Stopped                 node -h | less
+(base) AMBIN01978:NodeJSCourse 493055$ node --v8-options | grep "in progress"  --harmony-regexp-sequence (enable "RegExp Unicode sequence properties" (in progress))
+  --harmony-weak-refs-with-cleanup-some (enable "harmony weak references with FinalizationRegistry.prototype.cleanupSome" (in progress))
+  --harmony-import-assertions (enable "harmony import assertions" (in progress))
+  --harmony-intl-displaynames-date-types (enable "Intl.DisplayNames date types" (in progress))
+
+  
